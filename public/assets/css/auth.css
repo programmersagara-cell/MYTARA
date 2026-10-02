@@ -1,0 +1,144 @@
+/* ─── Auth Page Specific Styles ─── */
+
+.auth-page .form-input {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.auth-page .form-input:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.auth-page .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.auth-page .form-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.813rem;
+    font-weight: 500;
+}
+
+.auth-page .form-label i {
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 0.375rem;
+}
+
+.auth-page .form-checkbox label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+}
+
+.auth-page .form-checkbox input[type="checkbox"] {
+    accent-color: #3B82F6;
+}
+
+.auth-page .btn-primary {
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.auth-page .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.auth-page .btn-primary:active {
+    transform: translateY(0);
+}
+
+.auth-page .alert {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+}
+
+.auth-page .alert-danger {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.auth-page .alert-success {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.auth-page .alert-warning {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.auth-page .alert-info {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.auth-page .input-wrapper .form-input {
+    padding-right: 2.5rem;
+}
+
+.auth-page .input-toggle {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s;
+}
+
+.auth-page .input-toggle:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-page .auth-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.auth-page .auth-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.813rem;
+    margin-bottom: 0.25rem;
+}
+
+.auth-page .auth-info strong {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-page .auth-info code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #60A5FA;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* ─── Auth Back Home Button ─── */
+.auth-back-home {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-back-home .btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.auth-back-home .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,44 @@
+2,,,,,,,Title:,"ISMS Software License Management Ledger",,,"Prepared by:","Aaron Jay Trazona",,,,,,,
+3,,,,,,,Dept./Sec.:,"Information Technology",,,"Reviewed by:","Dolor De Claro",,,,,,,
+4,"Document No.:",,,,ISMS-E-005,,"Responsible for storage:","Aaron Jay Trazona",,,"Approved by:","Hidekazu Nawamaki",,,,,,,
+5,"Date of Entry:",,,,"June 8, 2023",,"Revision No.:",N,,,"Approving Signature:",,,,,,,,
+6,,"Sotware License Management Ledger",,,,,,,,,,,"As of:",46233,,,,,
+8,,No.,"Asset Number",,"Software Name*",,"Software Version*","Acquisition Date","Assigned Hardware - Asset Tag*","Department/Section *","License Category *","Next Renewal Date","Managing Department*","Person responsible for management*",Remarks,,,,
+9,,1,n/a,,"MS Teams",,n/a,"Nov. 20, 2022","O-15-OP-2651 (1)",IT,Subscription,"November 20, 2023",IT,"Aaron Trazona",ACTIVE,,,1,
+10,,2,n/a,,"Solid Works",,2022,"Dec. 1, 2022","O-13-MS-2076 (1)","Mold Fab","USB License","Dec. 1, 2023",IT,"Aaron Trazona",ACTIVE,,,1,
+11,,3,n/a,,"Draft Sight",,2022,"Dec. 1, 2022","O-13-MS-2076 (1)","Mold Fab","Paper License","Dec. 1, 2023",IT,"Aaron Trazona",ACTIVE,,,1,
+12,,4,n/a,,"Master CAM",,2022,"Dec. 1, 2022","O-13-MS-2147 (1)","Mold Fab","Paper License","Dec. 1, 2023",IT,"Aaron Trazona",ACTIVE,,,1,
+13,,5,n/a,,RHEL,,"version 8","Dec. 5, 2022","O-22-IT-8034 (1)",IT,Subscription,"August, Sept, Oct 2024",IT,"Aaron Trazona",ACTIVE,,4,6,
+14,,6,n/a,,Zimbra,,Enterprise,"Dec. 5, 2022","O-22-IT-8034 (1)",IT,Subscription,"August, Sept, Oct 2024",IT,"Aaron Trazona",ACTIVE,,,1,
+15,,7,n/a,,"Windows Server 2022",,Standard,"Jan. 7 , 2023","O-21-IT-2909 (1)",IT,"Medialess License",n/a,IT,"Aaron Trazona",ACTIVE,,,1,
+16,,8,n/a,,"Windows Server 2022",,Standard,"Jan. 7 , 2023","O-23-IT-3105 (1)",IT,"Medialess License",n/a,IT,"Aaron Trazona",ACTIVE,,,2,
+17,,9,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-IN-3101 (1)","PP Injection","Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,1,
+18,,10,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-IT-3097 (1)","Guard House","Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,2,
+19,,11,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-MS-3102 (1)","Mold Fab","Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,3,
+20,,12,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-PE-3098 (1)",Engineering,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,4,
+21,,13,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-PE-3099 (1)",Engineering,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,5,
+22,,14,n/a,,"MS Office 2021",,"Home and Studend English","Jan. 10, 2023","O-23-PE-3100 (1)",Engineering,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,6,
+23,,15,n/a,,"Windows Server 2022",,Standard,"Feb. 7 , 2023","O-23-IT-3032 (1)",IT,"Medialess License",n/a,IT,"Aaron Trazona",ACTIVE,,,1,
+24,,16,n/a,,"Windows Server 2022",,Standard,"Feb. 7 , 2023","O-23-IT-3033 (1)",IT,"Medialess License",n/a,IT,"Aaron Trazona",ACTIVE,,,2,
+25,,17,n/a,,Zoom,,Pro,"Feb. 13 , 2023","O-15-OP-2651 (1)",IT,Subscription,n/a,IT,"Aaron Trazona",ACTIVE,,1,1,
+26,,18,n/a,,Zoom,,Pro,"Feb. 13 , 2023",n/a,QA,Subscription,"Feb. 1, 2024",IT,"Aaron Trazona",ACTIVE,,,2,
+27,,19,n/a,,Zoom,,Pro,"Feb. 13 , 2023",n/a,FAD,Subscription,"Feb. 1, 2024",IT,"Aaron Trazona",ACTIVE,,,3,
+28,,20,n/a,,Zoom,,Pro,"Feb. 13 , 2023",SP010-553,EXEC,Subscription,"Feb. 1, 2024",IT,"Aaron Trazona",ACTIVE,,,4,
+29,,21,n/a,,"Veeam BackUp & Replication",,"version 11","Feb. 20, 2023","O-23-IT-3105 (1)",IT,Subscription,"Nov. 3, 2023",IT,"Aaron Trazona",ACTIVE,,,1,
+30,,22,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-EX-3123 (1)",Extrusion,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,1,noriel
+31,,23,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-EX-3124 (1)",Extrusion,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,1,2,tina
+32,,24,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-PC-3125 (1)",PC,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,2,3,edrian
+33,,25,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-PC-3126 (1)",PC,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,,4,anna
+34,,26,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-PC-3127 (1)",PC,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,3,5,belen
+35,,27,n/a,,"MS Office 2021",,"Home and Studend English","May 30, 2023","O-23-PC-3128 (1)",PC,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,melga
+36,,28,n/a,,"MS Office 2021",,"Home and Studend English","June 29, 2023",n/a,FAD,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,joyce
+37,,29,n/a,,"MS Office 2021",,"Home and Studend English","Aug. 1, 2023",n/a,PP,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,nap
+38,,30,n/a,,"MS Office 2021",,"Home and Studend English","Aug. 1, 2023",n/a,PP,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,balane
+39,,31,n/a,,RHEL,,"version 8","Sept. 1, 2023",n/a,IT,Subscription,n/a,IT,"Aaron Trazona",ACTIVE,,4,6,
+40,,32,n/a,,"MS Office 2021",,"Home and Studend English","Sept. 14, 2023",n/a,RMW,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,benjie
+41,,33,n/a,,"MS Office 2021",,"Home and Studend English","Sept. 14, 2023",n/a,HR,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,mavic
+42,,34,n/a,,"MS Office 2021",,"Home and Studend English","Sept. 30, 2023",n/a,PC,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,"melga laptop"
+43,,35,n/a,,"MS Office 2021",,"Home and Studend English","Oct. 30, 2023",n/a,IT,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,"marianne laptop"
+44,,36,n/a,,"MS Office 2021",,"Home and Studend English","Oct. 30, 2023",n/a,Engineering,"Card License",n/a,IT,"Aaron Trazona",ACTIVE,,4,6,epi
+45,,"ISMS-F-015: Rev N. June 8, 2023",,,,,,,,,,,,"Page 1 of 1",,,,,
+46,,"* Mandatory controlled",,,,,,,,,,,,,,,,,

@@ -1,0 +1,36 @@
+# Uploads directory security (Apache 2.4 syntax)
+#
+# Nothing in this tree may ever be executed or interpreted as markup.
+# Non-image documents (pdf/doc/docx) are intentionally still downloadable,
+# so this is an explicit deny-list of executable / scriptable / active types
+# rather than a blanket "deny all" (the parent directory config grants read).
+
+<FilesMatch "(?i)\.(php|php[0-9]|phtml|phps|pht|phar|inc|svg|svgz|htm|html|xhtml|shtml|js|mjs|cgi|pl|py|rb|jsp|jspx|asp|aspx|ashx|exe|dll|so|sh|bat|cmd|com|msi|scr|vbs|vbe|wsf|wsh|jar)$">
+    Require all denied
+</FilesMatch>
+
+# Dot-files (.htaccess, .user.ini, .env, ...) are never served
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Strip every server-side handler in this directory tree
+RemoveHandler .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pht .phar .svg .html .htm .xhtml .shtml .cgi
+RemoveType .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pht .phar .svg .html .htm .xhtml .shtml
+SetHandler none
+php_flag engine off
+
+# No user-supplied config overrides, no listing, no CGI.
+# FollowSymLinks must stay ON: the front controller's RewriteRule is inherited
+# into this tree and mod_rewrite is forbidden when both symlink options are off.
+<Files ".user.ini">
+    Require all denied
+</Files>
+Options -Indexes -ExecCGI +FollowSymLinks
+
+
+
+<FilesMatch "(?i)\.(pdf|doc|docx|txt)$">
+    Require all granted
+</FilesMatch>
+

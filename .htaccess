@@ -1,0 +1,34 @@
+RewriteEngine On
+
+# Serve the app favicon for the browser's default /favicon.ico request
+RewriteRule ^favicon\.ico$ public/assets/img/favicon.ico [L]
+
+# Redirect everything to index.php (Front Controller)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Do not disclose the PHP version (information disclosure)
+    Header always unset X-Powered-By
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(env|sql|md|log|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^(composer\.json|package\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+

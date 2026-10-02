@@ -1,0 +1,10 @@
+
+license ledger
+
+dispose asset
+
+history of repair and time frame /downtime 
+
+Integrating ticketing system into this system
+
+Preventive Maintenace Scheduler with notification.

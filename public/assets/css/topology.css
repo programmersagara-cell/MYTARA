@@ -1,0 +1,666 @@
+/* =============================================
+   Network Topology / Diagram Styles
+   ============================================= */
+
+.topology-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height, 64px) - 3rem);
+    gap: 12px;
+    position: static;
+}
+
+/* Ensure these elements use flexbox flow positioning (not absolute from app.css) */
+.topology-toolbar,
+.topology-search,
+.topology-legend {
+    position: static !important;
+}
+
+/* ─── Toolbar ─── */
+.topology-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 12px;
+}
+
+.topology-toolbar .toolbar-left h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary, #1E293B);
+}
+
+.topology-toolbar .toolbar-left h2 i {
+    margin-right: 8px;
+    color: var(--primary, #3B82F6);
+}
+
+.topology-toolbar .toolbar-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 8px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.filter-buttons .btn {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border: 1px solid var(--border-color, #E2E8F0);
+    background: transparent;
+    color: var(--text-secondary, #64748B);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-buttons .btn:hover {
+    background: var(--bg-hover, #F1F5F9);
+    color: var(--text-primary, #1E293B);
+}
+
+.filter-buttons .btn.active {
+    background: var(--primary, #3B82F6);
+    color: #fff;
+    border-color: var(--primary, #3B82F6);
+}
+
+.filter-buttons .btn i {
+    margin-right: 4px;
+}
+
+.topology-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 6px;
+}
+
+.topology-actions .btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.topology-actions .btn-success {
+    width: auto;
+    padding: 0 12px;
+    gap: 4px;
+}
+
+.connection-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+    padding-left: 8px;
+    border-left: 1px solid var(--border-color, #E2E8F0);
+    flex-wrap: wrap;
+    row-gap: 4px;
+}
+
+.connection-actions .btn {
+    width: auto;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.connection-actions .btn.active {
+    background: var(--primary, #3B82F6);
+    color: #fff;
+    border-color: var(--primary, #3B82F6);
+}
+
+.connection-actions .btn#connectBtn.active {
+    background: #10B981;
+    border-color: #10B981;
+    color: #fff;
+}
+
+.connection-actions .btn#disconnectBtn.active {
+    background: #EF4444;
+    border-color: #EF4444;
+    color: #fff;
+}
+
+.connection-actions .btn#labelBtn.active {
+    background: #8B5CF6;
+    border-color: #8B5CF6;
+    color: #fff;
+}
+
+/* ─── Search ─── */
+.topology-search {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.topology-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted, #94A3B8);
+    font-size: 0.85rem;
+}
+
+.topology-search input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 8px;
+    background: var(--input-bg, #F8FAFC);
+    color: var(--text-primary, #1E293B);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.topology-search input:focus {
+    border-color: var(--primary, #3B82F6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ─── Canvas ─── */
+.topology-canvas {
+    position: relative;
+    flex: 1;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.topology-canvas canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.topology-canvas canvas:active {
+    cursor: grabbing;
+}
+
+/* ─── Loading Overlay ─── */
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg, #fff);
+    z-index: 10;
+    gap: 12px;
+}
+
+.loading-overlay .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color, #E2E8F0);
+    border-top-color: var(--primary, #3B82F6);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+    color: var(--text-muted, #94A3B8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ─── Device Popup ─── */
+.device-popup {
+    position: absolute;
+    width: 260px;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+}
+
+.device-popup.active {
+    display: block;
+    animation: popupIn 0.2s ease-out;
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--bg-subtle, #F8FAFC);
+    border-bottom: 1px solid var(--border-color, #E2E8F0);
+}
+
+.popup-device-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-hover, #F1F5F9);
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.popup-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.popup-title h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary, #1E293B);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.popup-title .badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.popup-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-muted, #94A3B8);
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.popup-close:hover {
+    background: var(--bg-hover, #F1F5F9);
+    color: var(--text-primary, #1E293B);
+}
+
+.popup-body {
+    padding: 12px 16px;
+}
+
+.popup-detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-color-subtle, #F1F5F9);
+    font-size: 0.82rem;
+}
+
+.popup-detail-row:last-child {
+    border-bottom: none;
+}
+
+.popup-detail-row .info-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted, #94A3B8);
+    font-size: 0.78rem;
+}
+
+.popup-detail-row .info-label i {
+    width: 14px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.popup-detail-row code,
+.popup-detail-row span {
+    color: var(--text-primary, #1E293B);
+    font-size: 0.82rem;
+    text-align: right;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.popup-detail-row code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.78rem;
+    background: var(--bg-subtle, #F8FAFC);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--border-color, #E2E8F0);
+    background: var(--bg-subtle, #F8FAFC);
+}
+
+.popup-actions .btn {
+    flex: 1;
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    text-align: center;
+}
+
+/* ─── Legend ─── */
+.topology-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px 16px;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 12px;
+    font-size: 0.82rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary, #64748B);
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.legend-item:hover {
+    background: var(--bg-hover, #F1F5F9);
+}
+
+.legend-item i {
+    font-size: 1rem;
+}
+
+/* Device icon images used in toolbar filter buttons and legend */
+.device-icon-sm {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    object-fit: contain;
+    object-position: center;
+    vertical-align: middle;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+/* Keep filter buttons compact and aligned with the icon */
+.filter-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.2;
+}
+
+.filter-buttons .btn .device-icon-sm {
+    margin-right: 0;
+}
+
+.legend-item .device-icon-sm {
+    margin-right: 0;
+}
+
+.connection-line {
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #94A3B8;
+    border-radius: 1px;
+}
+
+.junction-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #64748B;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #94A3B8;
+}
+
+/* Straight-line indicator badge shown in the legend */
+.straight-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 22px;
+    background: #FFFFFF;
+    border: 1.5px solid #94A3B8;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #64748B;
+}
+
+.straight-badge.straight-h {
+    border-color: #3B82F6;
+    color: #3B82F6;
+}
+
+.straight-badge.straight-v {
+    border-color: #F59E0B;
+    color: #F59E0B;
+}
+
+[data-theme="dark"] .straight-badge {
+    background: #1E293B;
+    border-color: #64748B;
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .straight-badge.straight-h {
+    border-color: #60A5FA;
+    color: #60A5FA;
+}
+
+[data-theme="dark"] .straight-badge.straight-v {
+    border-color: #FBBF24;
+    color: #FBBF24;
+}
+
+.connection-actions .btn#boxSelectBtn.active {
+    background: #6366F1;
+    border-color: #6366F1;
+    color: #fff;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .topology-container {
+        height: calc(100vh - 100px);
+    }
+
+    .topology-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topology-toolbar .toolbar-right {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+
+    .topology-search {
+        max-width: 100%;
+    }
+
+    .device-popup {
+        width: 220px;
+    }
+}
+
+/* ─── Label Context Menu ─── */
+.label-context-menu {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #E2E8F0);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    overflow: hidden;
+    min-width: 160px;
+    animation: popupIn 0.15s ease-out;
+}
+
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: var(--text-primary, #1E293B);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.context-menu-item:hover {
+    background: var(--bg-hover, #F1F5F9);
+}
+
+.context-menu-item i {
+    width: 16px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted, #94A3B8);
+}
+
+.context-menu-item[data-action="delete"]:hover i {
+    color: #EF4444;
+}
+
+.context-menu-item[data-action="delete"]:hover {
+    color: #EF4444;
+}
+
+/* ─── Undo/Redo Buttons ─── */
+.topology-actions .btn#undoBtn,
+.topology-actions .btn#redoBtn {
+    transition: opacity 0.2s;
+}
+
+.topology-actions .btn#undoBtn.disabled,
+.topology-actions .btn#redoBtn.disabled,
+.topology-actions .btn#undoBtn:disabled,
+.topology-actions .btn#redoBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: auto;
+}
+
+.topology-actions .btn#undoBtn:not(:disabled):hover,
+.topology-actions .btn#redoBtn:not(:disabled):hover {
+    background: var(--bg-hover, #F1F5F9);
+    color: var(--text-primary, #1E293B);
+}
+
+/* ─── Dark Mode Overrides ─── */
+[data-theme="dark"] .topology-canvas {
+    background: #1E293B;
+}
+
+[data-theme="dark"] .loading-overlay {
+    background: #1E293B;
+}
+
+[data-theme="dark"] .topology-toolbar,
+[data-theme="dark"] .topology-legend {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .device-popup {
+    background: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .popup-header {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .popup-body {
+    background: #1E293B;
+}
+
+[data-theme="dark"] .popup-detail-row {
+    border-color: #334155;
+}
+
+[data-theme="dark"] .popup-detail-row code {
+    background: #0F172A;
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .popup-actions {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .topology-search input {
+    background: #0F172A;
+    border-color: #334155;
+    color: #E2E8F0;
+}
+
+[data-theme="dark"] .topology-search input:focus {
+    border-color: #3B82F6;
+}
+
